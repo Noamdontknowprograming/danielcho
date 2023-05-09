@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Looping Video</title>
+  <style>
+    body {
+      background-color: #e0f2e9; /* Pastel green background */
+      padding: 20px; /* Add padding for spacing */
+    }
+
+    #random-sentence {
+      font-size: 24px;
+      font-weight: bold;
+      color: #000; /* Black text color */
+      text-align: center;
+      padding: 20px;
+      background-color: #c8e6d7; /* Pastel green background for the text */
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block; /* Adjust video display to remove extra spacing */
+      margin-bottom: 20px; /* Add margin at the bottom of the video */
+    }
+
+    .photos-container {
+      display: flex; /* Create a flex container for photos */
+      justify-content: center; /* Center align photos horizontally */
+      opacity: 0; /* Set initial opacity to 0 */
+      transition: opacity 0.5s ease; /* Add smooth transition for opacity change */
+      margin-top: 20px; /* Add top margin for spacing */
+    }
+
+    .photo {
+      width: 200px; /* Adjust width of photos as needed */
+      height: 150px; /* Adjust height of photos as needed */
+      margin-right: 20px; /* Add right margin to create space between photos */
+      background-color: #fff; /* White background for photos */
+    }
+  </style>
+  <script>
+    window.addEventListener('scroll', function() {
+      var photosContainer = document.querySelector('.photos-container');
+      var photosContainerPosition = photosContainer.getBoundingClientRect().top;
+
+      // Check if the photos container is in the viewport
+      if (photosContainerPosition < window.innerHeight) {
+        photosContainer.style.opacity = 1; // Make the photos container visible
+      }
+    });
+  </script>
+</head>
+<body>
+  <h2 id="random-sentence">What you did is not nice, it's not nice to do that!</h2>
+  <video autoplay loop controls>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+  
+  <div class="photos-container">
+    <div class="photo">
+      <img src="photo1.png" alt="Photo 1">
+    </div>
+  </div>
+</body>
+</html>
+
